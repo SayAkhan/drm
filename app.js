@@ -6,12 +6,8 @@ const options = {
     key: fs.readFileSync('./rootca.key'), cert: fs.readFileSync('./rootca.crt') 
 };
 
-const HTTP_PORT = 3000; 
-const HTTPS_PORT = 443;
-
-
-const app = express()
-const port = 3000
+const app = express();
+const port = 443;
 
 app.use(express.static("static"));
 
