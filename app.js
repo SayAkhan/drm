@@ -12,19 +12,21 @@ app.use(express.static("static"));
 app.set('views','./views');
 app.set('view engine','ejs');
 
-app.get('/', (req, res) => {
-  res.render('shaka');
-
-})
 
 
 const options = { 
-    key: fs.readFileSync('./rootca.key'), cert: fs.readFileSync('./rootca.crt') 
+    key: fs.readFileSync('./rootca.key'), 
+    cert: fs.readFileSync('./rootca.crt') 
 };
 
 https.createServer(options, app).listen(443);
 
+app.get('/', (req, res) => {
+    res.render('shaka');
+  
+  })
+
 app.listen(port, () => {
-  console.log(`running server.... ${port}`)
+  console.log(`running server.... ${port}`);
 })
 
