@@ -2,13 +2,10 @@ const express = require('express')
 const http = require('http'); 
 const https = require('https'); 
 const fs = require('fs');
-const options = { 
-    key: fs.readFileSync('./rootca.key'), cert: fs.readFileSync('./rootca.crt') 
-};
-
 
 const app = express();
-https=https.createServer(options, app).listen(443);
+
+port=443;
 
 app.use(express.static("static"));
 
@@ -20,6 +17,14 @@ app.get('/', (req, res) => {
 
 })
 
+
+const options = { 
+    key: fs.readFileSync('./rootca.key'), cert: fs.readFileSync('./rootca.crt') 
+};
+
+https.createServer(options, app).listen(443);
+
 app.listen(port, () => {
   console.log(`running server.... ${port}`)
 })
+
