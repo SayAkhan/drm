@@ -6,9 +6,10 @@ const options = {
     key: fs.readFileSync('./rootca.key'), cert: fs.readFileSync('./rootca.crt') 
 };
 
-https=https.createServer(options,app).listen(3000);
+
 const app = express();
 const port = 3000;
+https=https.createServer(options, app).listen(3000);
 
 app.use(express.static("static"));
 
