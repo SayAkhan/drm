@@ -15,8 +15,8 @@ app.set('view engine','ejs');
 
 
 const options = { 
-    key: fs.readFileSync('./rootca.key'), 
-    cert: fs.readFileSync('./rootca.crt') 
+    key: fs.readFileSync('./key.pem'), 
+    cert: fs.readFileSync('./cert.pem') 
 };
 
 https.createServer(options, app).listen(443);
