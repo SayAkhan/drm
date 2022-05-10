@@ -8,8 +8,7 @@ const options = {
 
 
 const app = express();
-const port = 3000;
-https=https.createServer(options, app).listen(3000);
+https=https.createServer(options, app).listen(443);
 
 app.use(express.static("static"));
 
