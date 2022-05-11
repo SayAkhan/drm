@@ -27,8 +27,3 @@ app.get('/', (req, res) => {
     res.render('shaka');
   
   })
-
-/*app.listen(port, () => {
-  console.log(`running server.... ${port}`);
-})*/
-
