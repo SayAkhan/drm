@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const app = express();
 
-port=3000;
+port=443;
 
 app.use(express.static("static"));
 
@@ -19,7 +19,7 @@ const options = {
     cert: fs.readFileSync('./cert.pem') 
 };
 
-//https.createServer(options, app).listen(3000);
+https.createServer(options, app).listen(443);
 
 app.get('/', (req, res) => {
     res.render('shaka');
