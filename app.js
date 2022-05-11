@@ -19,7 +19,7 @@ const options = {
     cert: fs.readFileSync('./cert.pem') 
 };
 
-https.createServer(options, app).listen(3000);
+//https.createServer(options, app).listen(3000);
 
 app.get('/', (req, res) => {
     res.render('shaka');
