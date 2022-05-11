@@ -24,6 +24,6 @@ https.createServer(options, app).listen(port,() => {
 })
 
 app.get('/', (req, res) => {
-    res.render('shaka');
+    res.render('index');
   
   })
